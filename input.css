@@ -1,1 +1,39 @@
 @import "tailwindcss";
+
+@theme {
+    --font-body: Barlow;
+    --font-headings: Fraunces;
+}
+
+.hero {
+    background-image: url(images/desktop/image-header.jpg);
+    background-repeat: no-repeat;
+    background-position: 0%;
+    background-size: 100%;
+}
+
+.graphic {
+    background-image: url(images/desktop/image-graphic-design.jpg);
+    background-repeat: no-repeat;
+    background-position: 0%;
+    background-size: 100%;
+}
+
+.photography {
+    background-image: url(images/desktop/image-photography.jpg);
+    background-repeat: no-repeat;
+    background-position: 0%;
+    background-size: 100%;
+}
+
+.fifty {
+    width: 50%;
+}
+
+.quarter {
+    width: 25%;
+}
+
+p {
+    font-size: 18px;
+}
