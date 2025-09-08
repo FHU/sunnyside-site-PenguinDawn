@@ -3,6 +3,8 @@
 @theme {
     --font-body: Barlow;
     --font-headings: Fraunces;
+    --breakpoint-xs: 400px;
+    --breakpoint-tab: 900px;
 }
 
 .hero {
