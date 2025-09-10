@@ -30,33 +30,37 @@
     </nav>
   </header>
 
-  <section class="hero bg-[#66bdf9] text-center h-150 flex flex-col items-center">
-    <h1 class="font-headings pt-10 mb-40 text-white uppercase font-bold tracking-widest text-3xl">We are creatives</h1>
+  <section class="hero bg-[#66bdf9] text-center md:h-150 flex flex-col items-center">
+    <h1 class="font-headings pt-10 md:mb-40 max-md:mb-10 text-white uppercase font-bold tracking-widest text-3xl">We are creatives</h1>
     <img src="images/icon-arrow-down.svg" class=""/>
   </section>
 
+  <div class="grid grid-cols-1">
+
+  </div>
 
 
-  <section class="egg flex">
-    <div class="p-40 md:max-lg:p-10  fifty flex flex-col items-center justify-center">
+  <section class="egg flex flex-col-reverse md:flex-row">
+    <div class="p-10 max-md:text-center md:text-left sm:fifty md:p-40 flex flex-col items-center justify-center">
       <div class="flex flex-col">
         <h2 class="text-3xl mb-5 font-headings font-bold">Transform your brand</h2>
         <p class="mb-5 font-body text-gray-500">We are a full-service creative agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you.</p>
-        <p class="font-headings font-bold uppercase">Learn more</p>
+        <p class="font-headings font-bold uppercase after:bg-amber-200">Learn more
+          </span>
+        </p>
       </div>
     </div>
 
-    <div class="right bg-[#fcd303] fifty flex justify-center items-center">
+    <div class="right bg-[#fcd303] sm:fifty flex justify-center items-center">
       <img src="images/desktop/image-transform.jpg" alt="image of an egg"/>
     </div>
   </section>
 
-  <section class="standout flex">
-    <div class="left bg-[#fa8482] fifty flex justify-center items-center">
+  <section class="standout flex flex-col md:flex-row">
+    <div class="left bg-[#fa8482] md:fifty flex justify-center items-center">
       <img src="images/desktop/image-stand-out.jpg" alt="image of an egg"/>
     </div>
-
-    <div class="p-40 md:max-lg:p-10 fifty flex flex-col items-center justify-center">
+    <div class="p-10 text-center md:text-left md:p-40 md:max-lg:p-10 md:fifty flex flex-col items-center justify-center">
       <div class="flex flex-col">
         <h2 class="text-3xl mb-5 font-headings font-bold">Stand out to the right audience</h2>
         <p class="mb-5 font-body text-gray-500">Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll build and extend your brand in digital places.</p>
@@ -64,21 +68,28 @@
       </div>
 
     </div>
+    
+
+    
       
   </section>
 
+<!-- 
+  bg-[url(images/desktop/images/desktop/image-graphic-design.jpg)] bg-cover bg--->
 
 <section class="flex md:flex-row flex-col text-gray-600">
-  <div class="graphic bg-[#7be3c0] px-40 md:max-lg:px-15 md:fifty text-center h-150 md:max-lg:h-100 flex flex-col items-center">
-    <h2 class="pt-100 md:max-lg:pt-60 font-headings text-2xl text-gray-600 font-bold">Graphic design</h2>
+  <div class="graphic bg-[#7be3c0] px-20 md:max-lg:px-15 md:fifty text-center h-100 md:max-lg:h-100 flex flex-col items-center">
+    <h2 class="pt-60 md:max-lg:pt-60 font-headings text-2xl text-gray-600 font-bold">Graphic design</h2>
     <p class="font-body">Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients’ attention.</p>
   </div>
 
-    <div class="photography bg-[#5ebfff] md:px-40 md:max-lg:px-15 md:fifty text-center h-150 md:max-lg:h-100 flex flex-col items-center">
-      <h2 class="pt-100 md:max-lg:pt-60 font-headings text-2xl text-gray-600 font-bold">Photography</h2>
+    <div class="photography bg-[#3ea4e8] px-20 md:max-lg:px-15 md:fifty text-center h-100 md:max-lg:h-100 flex flex-col items-center">
+      <h2 class="pt-60 md:max-lg:pt-60 font-headings text-2xl text-gray-600 font-bold">Photography</h2>
       <p class="font-body">Increase your credibility by getting the most stunning, high-quality photos that improve your business image.</p>
     </div>
   </section>
+
+  <!-- Good until here -->
 
 <section class="testimonials flex flex-col text-center p-20">
   <h3 class="font-headings uppercase text-gray-500 tracking-widest mb-10">Client testimonials</h3>
