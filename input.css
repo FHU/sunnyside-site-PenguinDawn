@@ -9,16 +9,18 @@
 
 .hero {
     background-image: url(images/desktop/image-header.jpg);
-    background-repeat: no-repeat;
-    background-position: 0%;
-    background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
 }
 
 .graphic {
     background-image: url(images/desktop/image-graphic-design.jpg);
     background-repeat: no-repeat;
     background-position: 0%;
-    background-size: cover;
+    background-size: 100%;
 }
 
 .photography {
