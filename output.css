@@ -7,13 +7,8 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-200: oklch(88.5% 0.062 18.334);
-    --color-red-400: oklch(70.4% 0.191 22.216);
-    --color-amber-50: oklch(98.7% 0.022 95.277);
-    --color-amber-200: oklch(92.4% 0.12 95.746);
-    --color-yellow-300: oklch(90.5% 0.182 98.111);
+    --color-yellow-400: oklch(85.2% 0.199 91.936);
     --color-green-200: oklch(92.5% 0.084 155.995);
-    --color-blue-300: oklch(80.9% 0.105 251.813);
     --color-blue-400: oklch(70.7% 0.165 254.624);
     --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-gray-500: oklch(55.1% 0.027 264.364);
@@ -27,7 +22,6 @@
     --text-3xl--line-height: calc(2.25 / 1.875);
     --font-weight-bold: 700;
     --tracking-widest: 0.1em;
-    --radius-md: 0.375rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --font-body: Barlow;
@@ -183,8 +177,26 @@
   }
 }
 @layer utilities {
+  .absolute {
+    position: absolute;
+  }
+  .relative {
+    position: relative;
+  }
   .static {
     position: static;
+  }
+  .top-15 {
+    top: calc(var(--spacing) * 15);
+  }
+  .top-20 {
+    top: calc(var(--spacing) * 20);
+  }
+  .right-\[5\%\] {
+    right: 5%;
+  }
+  .left-\[5\%\] {
+    left: 5%;
   }
   .mt-\[65\%\] {
     margin-top: 65%;
@@ -204,17 +216,29 @@
   .flex {
     display: flex;
   }
-  .grid {
-    display: grid;
+  .hidden {
+    display: none;
+  }
+  .inline {
+    display: inline;
   }
   .table {
     display: table;
   }
+  .h-0 {
+    height: calc(var(--spacing) * 0);
+  }
+  .w-0 {
+    width: calc(var(--spacing) * 0);
+  }
   .w-20 {
     width: calc(var(--spacing) * 20);
   }
-  .w-\[130px\] {
-    width: 130px;
+  .w-\[50\%\] {
+    width: 50%;
+  }
+  .w-\[90\%\] {
+    width: 90%;
   }
   .max-w-1000 {
     max-width: calc(var(--spacing) * 1000);
@@ -230,9 +254,6 @@
   }
   .resize {
     resize: both;
-  }
-  .grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
   .flex-col {
     flex-direction: column;
@@ -251,6 +272,9 @@
   }
   .justify-end {
     justify-content: flex-end;
+  }
+  .gap-5 {
+    gap: calc(var(--spacing) * 5);
   }
   .space-y-6 {
     :where(& > :not(:last-child)) {
@@ -283,18 +307,42 @@
   .rounded-full {
     border-radius: calc(infinity * 1px);
   }
-  .rounded-md {
-    border-radius: var(--radius-md);
-  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .border-b-40 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 40px;
+  }
+  .border-l-40 {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 40px;
+  }
+  .border-solid {
+    --tw-border-style: solid;
+    border-style: solid;
+  }
+  .border-b-\[\#fff\] {
+    border-bottom-color: #fff;
+  }
+  .border-l-transparent {
+    border-left-color: transparent;
+  }
   .bg-\[\#3ea4e8\] {
     background-color: #3ea4e8;
   }
+  .bg-\[\#6ebbee\] {
+    background-color: #6ebbee;
+  }
   .bg-\[\#7be3c0\] {
     background-color: #7be3c0;
+  }
+  .bg-\[\#54a5dc\] {
+    background-color: #54a5dc;
+  }
+  .bg-\[\#83c8f6\] {
+    background-color: #83c8f6;
   }
   .bg-\[\#fa8482\] {
     background-color: #fa8482;
@@ -308,14 +356,11 @@
   .bg-white {
     background-color: var(--color-white);
   }
+  .bg-yellow-400 {
+    background-color: var(--color-yellow-400);
+  }
   .fill-\[\#2C7566\] {
     fill: #2C7566;
-  }
-  .fill-amber-50 {
-    fill: var(--color-amber-50);
-  }
-  .fill-white {
-    fill: var(--color-white);
   }
   .p-2 {
     padding: calc(var(--spacing) * 2);
@@ -326,11 +371,11 @@
   .p-20 {
     padding: calc(var(--spacing) * 20);
   }
-  .px-6 {
-    padding-inline: calc(var(--spacing) * 6);
-  }
   .px-20 {
     padding-inline: calc(var(--spacing) * 20);
+  }
+  .px-\[5\%\] {
+    padding-inline: 5%;
   }
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
@@ -394,28 +439,6 @@
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
   }
-  .hover\:border-b-6 {
-    &:hover {
-      @media (hover: hover) {
-        border-bottom-style: var(--tw-border-style);
-        border-bottom-width: 6px;
-      }
-    }
-  }
-  .hover\:border-b-red-400 {
-    &:hover {
-      @media (hover: hover) {
-        border-bottom-color: var(--color-red-400);
-      }
-    }
-  }
-  .hover\:border-b-yellow-300 {
-    &:hover {
-      @media (hover: hover) {
-        border-bottom-color: var(--color-yellow-300);
-      }
-    }
-  }
   .hover\:bg-blue-400 {
     &:hover {
       @media (hover: hover) {
@@ -457,11 +480,6 @@
       text-align: center;
     }
   }
-  .sm\:grid-cols-2 {
-    @media (width >= 40rem) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
   .md\:mb-30 {
     @media (width >= 48rem) {
       margin-bottom: calc(var(--spacing) * 30);
@@ -470,6 +488,16 @@
   .md\:mb-80 {
     @media (width >= 48rem) {
       margin-bottom: calc(var(--spacing) * 80);
+    }
+  }
+  .md\:flex {
+    @media (width >= 48rem) {
+      display: flex;
+    }
+  }
+  .md\:hidden {
+    @media (width >= 48rem) {
+      display: none;
     }
   }
   .md\:w-\[50\%\] {
@@ -494,6 +522,11 @@
   .md\:p-\[5\%\] {
     @media (width >= 48rem) {
       padding: 5%;
+    }
+  }
+  .md\:px-6 {
+    @media (width >= 48rem) {
+      padding-inline: calc(var(--spacing) * 6);
     }
   }
   .md\:text-left {
@@ -537,6 +570,36 @@
 }
 p {
   font-size: 18px;
+}
+.fancy-underline {
+  position: relative;
+  z-index: 0;
+}
+.fancy-underline:hover::after {
+  content: "";
+  position: absolute;
+  left: -10%;
+  bottom: 0;
+  width: 120%;
+  height: 8px;
+  border-radius: 8px;
+  z-index: -1;
+  background-color: yellow;
+}
+.fancy-underline-red {
+  position: relative;
+  z-index: 0;
+}
+.fancy-underline-red:hover::after {
+  content: "";
+  position: absolute;
+  left: -10%;
+  bottom: 0;
+  width: 120%;
+  height: 8px;
+  border-radius: 8px;
+  z-index: -1;
+  background-color: rgb(235, 123, 115);
 }
 @property --tw-space-y-reverse {
   syntax: "*";

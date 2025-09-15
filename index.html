@@ -26,14 +26,37 @@
   <!-- Hero section -->
 
   <section class="hero">
-    <header class=" text-white flex justify-between items-center px-6 py-8">
+    <header class=" text-white flex justify-between items-center md:px-6 px-[5%] py-8 relative">
     <a href="" id="logo"><img src="images/logo.svg" alt="Sunnyside logo"/></a>
-    <nav class="flex items-center space-x-6">
+    <nav class="items-center space-x-6 hidden md:flex">
       <a href="#">About</a>
       <a href="#">Services</a>
       <a href="#">Projects</a>
       <a class="bg-white hover:bg-blue-400 hover:text-white text-black rounded-full p-2" href="#">Contact</a>
     </nav>
+
+    <a class="flex md:hidden">
+      <img id="hamburger" src="images/icon-hamburger.svg" alt="">
+    </a>
+
+
+
+    <div id="triangle" class="w-0 h-0 
+    border-solid
+    border-l-transparent border-l-40
+    border-b-[#fff] border-b-40
+    hidden absolute right-[5%] top-15
+    
+    "></div>
+
+    <nav id="mobile-menu" class="hidden bg-white text-gray-500 font-bold p-10 gap-5 flex flex-col text-center items-center absolute w-[90%] left-[5%] top-20">
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Projects</a>
+      <a class="bg-yellow-400 uppercase font-headings hover:bg-blue-400 hover:text-white text-black rounded-full p-2 w-[50%]" href="#">Contact</a>
+    </nav>
+
+
   </header>
     <div class="text-center flex flex-col items-center">
       <h1 class="font-headings pt-10 md:mb-30 max-md:mb-10 text-white uppercase font-bold tracking-widest text-3xl">We are creatives</h1>
@@ -48,7 +71,12 @@
       <div class="flex flex-col">
         <h2 class="text-3xl mb-5 font-headings font-bold">Transform your brand</h2>
         <p class="mb-5 font-body text-gray-500">We are a full-service creative agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you.</p>
-        <p class="font-headings w-[130px] font-bold uppercase hover:border-b-yellow-300 hover:border-b-6 hover:border-w rounded-md">Learn more</p>
+        <div>
+          <a href="" class="font-bold font-headings uppercase inline fancy-underline
+">Learn more </a>
+
+        </div>
+        
       </div>
     </div>
 
@@ -66,7 +94,11 @@
       <div class="flex flex-col">
         <h2 class="text-3xl mb-5 font-headings font-bold">Stand out to the right audience</h2>
         <p class="mb-5 font-body text-gray-500">Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll build and extend your brand in digital places.</p>
-        <p class="font-headings w-[130px] font-bold uppercase hover:border-b-red-400 hover:border-b-6 hover:border-w rounded-md">Learn more</p>
+        <div>
+          <a href="" class="font-bold font-headings uppercase inline fancy-underline-red
+">Learn more </a>
+
+        </div>
       </div>
     </div>  
   </section>
@@ -79,7 +111,7 @@
     <p class="font-body mb-10">Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients’ attention.</p>
   </div>
 
-  <div class="photography bg-[#3ea4e8] md:w-[50%] px-20 md:max-lg:px-15 text-center flex flex-col justify-end items-center">
+  <div class="photography bg-[#83c8f6] md:w-[50%] px-20 md:max-lg:px-15 text-center flex flex-col justify-end items-center">
     <h2 class="mt-[65%] font-headings text-2xl text-gray-600 font-bold">Photography</h2>
     <p class="font-body mb-10">Increase your credibility by getting the most stunning, high-quality photos that improve your business image.</p>
   </div>
@@ -133,8 +165,9 @@
 </section>
 
 <footer class="bg-green-200 flex flex-col items-center space-y-6 pb-7 pt-7">
-
-  <img src="images/logo-green.svg" />
+  <a href="">
+    <img src="images/logo-green.svg" />
+  </a>
   <nav class="flex items-center space-x-6">
     <a href="#" class="hover:text-white">About</a>
     <a href="#" class="hover:text-white">Services</a>
@@ -162,5 +195,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
